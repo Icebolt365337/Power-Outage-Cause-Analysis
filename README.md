@@ -69,7 +69,7 @@ Afterwards, I checked the range of unique values for each columns, checking for 
 The first few rows/columns of the cleaned data is below: 
 
 |   YEAR |   MONTH | POSTAL.CODE   | OUTAGE.START        | OUTAGE.RESTORATION   |
-|-------:|--------:|:--------------|:--------------------|:---------------------|
+|-------|--------|--------------|:--------------------|:---------------------|
 |   2011 |       7 | MN            | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |
 |   2014 |       5 | MN            | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |
 |   2010 |      10 | MN            | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |
