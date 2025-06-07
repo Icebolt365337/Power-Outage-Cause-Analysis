@@ -139,8 +139,11 @@ I believe that the column 'OUTAGE.START' could be NMAR. The data in this column 
 I analyzed the missingness of the 'CUSTOMERS.AFFECTED' column on two other columns, 'CAUSE.CATEGORY' and 'CLIMATE.CATEGORY', using permutation testing with 1000 simulations. The first permutation test, analyzing the missingness of 'CUSTOMERS.AFFECTED' on 'CAUSE.CATEGORY', is as follows:
 
 Null Hypothesis: 'CUSTOMERS.AFFECTED' is not MAR on the 'CAUSE.CATEGORY' column
+
 Alternative Hypothesis: 'CUSTOMERS.AFFECTED' is MAR on the 'CAUSE.CATEGORY' column
+
 Test statistic: TVD (Total Variance Distribution)
+
 Significance Level: 0.05
 
 The resulting p-value was 0.0. Since this was lower than the significance level, I rejected the null hypothesis. A graph of the simulations with the simulated and actual TVD is below:
@@ -155,8 +158,11 @@ The resulting p-value was 0.0. Since this was lower than the significance level,
 The second permutation test, analyzing the missingness of 'CUSTOMERS.AFFECTED' on 'CLIMATE.CATEGORY', is as follows:
 
 Null Hypothesis: 'CUSTOMERS.AFFECTED' is not MAR on the 'CLIMATE.CATEGORY' column
+
 Alternative Hypothesis: 'CUSTOMERS.AFFECTED' is MAR on the 'CLIMATE.CATEGORY' column
+
 Test statistic: TVD (Total Variance Distribution)
+
 Significance Level: 0.05
 
 The resulting p-value was 0.26. Since this was higher than the significance level, I failed to reject the null hypothesis.
@@ -166,8 +172,11 @@ The resulting p-value was 0.26. Since this was higher than the significance leve
 I decided to test some characteristics of 'CAUSE.CATEGORY', in relation to the 'OUTAGE.DURATION' column. In particular, I wanted to test whether the outage cause of 'severe weather' had a greater outage duration than 'system operability disruption', using permutation testing with a 1000 simulations.
 
 Null Hypothesis: The outage cause of 'system operability disruption' and 'severe weather' have the same outage durations
+
 Alternative Hypothesis: The outage cause of 'severe weather' has a greater outage duration than 'system operability disruption'
+
 Test Statistic: Difference in the average outage duration for 'severe weather' and 'system operability disruption'
+
 Significance Level: 0.05
 
 I chose this test statistic because the mean of the 'OUTAGE.DURATION' was the best way to test on this in relation to the 'CAUSE.CATEGORY' on only two causes. We couldn't use a TVD since we weren't comparing categorical distribution values, and a K-S test statistic would be meaningless here as there is nothing inherently important about the probability distribution function of the respective 'OUTAGE.DURATION'. I chose a significance level of 0.05 as I wanted to keep the chance that I incorrectly rejected the null hypothesis at 5%.
@@ -196,8 +205,11 @@ I decided to test the fairness of my model on relatively wealthier states, vs. l
 I set a threshold of 1, which are states whose per capita GSP is the same as the U.S. per capita GSP, with states less than this threshold considered to have less relative GDP, and states more than this threshold to have more relative GDP. Since this is a multiclassifier without any notable class imbalance, I decided to use accuracy as my measure of fairness.
 
 Null Hypothesis: The model is fair. Its accuracy for states with less relative GDP and states with more relative GDP are the same, and any differences are due to random chance.
+
 Alternative Hypothesis: Our model is unfair. Its accuracy for states with more relative GDP is higher than for states with more relative GDP.
+
 Test Statistic: Accuracy
+
 Significance Level: 0.05
 
 The resulting p-value was 1.0. Since the p-value is higher than a significance value of 0.05, we fail to reject the null hypothesis.
