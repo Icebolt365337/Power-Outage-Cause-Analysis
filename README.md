@@ -9,6 +9,8 @@
 
 ---
 
+**Go to website for proper displaying of content: https://icebolt365337.github.io/Power-Outage-Cause-Analysis/
+
 ## Introduction
 
 Author - Uday Lingampalli (DSC80 Project)
